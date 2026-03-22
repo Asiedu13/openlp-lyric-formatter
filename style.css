@@ -70,18 +70,33 @@ select {
     font: inherit;
 }
 
+.cascadia-mono-regular {
+    font-family: "Cascadia Mono", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
 body {
     overflow-x: hidden;
+    /*background: #3f3f3f;*/
+    /*color: white;*/
 }
 
 header {
     padding: 1rem;
 }
 
+#main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 main {
     display: flex;
     width: 100vw;
-    height: 100vh;
+    height: 80vh;
     justify-content: center;
     align-items: center;
     gap: 50px;
@@ -99,7 +114,13 @@ main label textarea {
     border-radius: 10px;
 }
 
-main div button {
+#actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#actions button {
     width: fit-content;
     height: 30px;
     display: flex;
@@ -109,7 +130,26 @@ main div button {
     margin: 10px 0;
 }
 
-main div button img {
+#actions button img {
     height: 20px;
     width: 20px;
+}
+
+#actions #statusText {
+    color: lightseagreen;
+}
+
+
+#works-guide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#works-guide article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

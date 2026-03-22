@@ -5,30 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>OpenLP Fast Lyric Formatter</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&display=swap"
+            rel="stylesheet"
+    />
 </head>
-<body>
-<header>
+<body class="cascadia-mono-regular">
+<header id="main-header">
     <h2>OPENLP Fast Lyric Formatter</h2>
+    <div>
+        <a target="_blank" href="https://github.com/Asiedu13/openlp-lyric-formatter">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSJjdXJyZW50Q29sb3IiIGQ9Ik0xMC4yMjYgMTcuMjg0Yy0yLjk2NS0uMzYtNS4wNTQtMi40OTMtNS4wNTQtNS4yNTZjMC0xLjEyMy40MDQtMi4zMzYgMS4wNzgtMy4xNDRjLS4yOTItLjc0MS0uMjQ3LTIuMzE0LjA5LTIuOTY1Yy44OTgtLjExMiAyLjExMS4zNiAyLjgzIDEuMDFjLjg1My0uMjY5IDEuNzUyLS40MDQgMi44NTMtLjQwNGMxLjEgMCAxLjk5OS4xMzUgMi44MDcuMzgyYy42OTYtLjYyOSAxLjkzMi0xLjEgMi44My0uOTg4Yy4zMTUuNjA2LjM2IDIuMTc5LjA2NyAyLjk0MmMuNzIuODU0IDEuMTAxIDIgMS4xMDEgMy4xNjdjMCAyLjc2My0yLjA4OSA0Ljg1Mi01LjA5OCA1LjIzNGMuNzYzLjQ5NCAxLjI4IDEuNTcyIDEuMjggMi44MDd2Mi4zMzZjMCAuNjc0LjU2MSAxLjA1NiAxLjIzNS43ODZjNC4wNjYtMS41NSA3LjI1NS01LjYxNSA3LjI1NS0xMC42NDZDMjMuNSA2LjE4OCAxOC4zMzQgMSAxMS45NzggMUM1LjYyIDEgLjUgNi4xODguNSAxMi41NDVjMCA0Ljk4NiAzLjE2NyA5LjEyIDcuNDM1IDEwLjY2OWMuNjA2LjIyNSAxLjE5LS4xOCAxLjE5LS43ODZWMjAuNjNhMi45IDIuOSAwIDAgMS0xLjA3OC4yMjRjLTEuNDgzIDAtMi4zNTktLjgwOC0yLjk4Ny0yLjMxM2MtLjI0Ny0uNjA3LS41MTctLjk2Ni0xLjAzNC0xLjAzM2MtLjI3LS4wMjMtLjM1OS0uMTM1LS4zNTktLjI3YzAtLjI3LjQ1LS40NzEuODk4LS40NzFjLjY1MiAwIDEuMjEzLjQwNCAxLjc5NyAxLjIzNWMuNDUuNjUxLjkyMS45NDMgMS40ODMuOTQzYy41NjEgMCAuOTItLjIwMiAxLjQzNy0uNzE5Yy4zODItLjM4MS42NzQtLjcxOC45NDQtLjk0MyIvPjwvc3ZnPg==" alt="github icon">
+        </a>
+    </div>
 </header>
 <main>
     <div>
-        <label> Your text goes here
+        <label> Your lyrics go here
             <textarea id="raw" cols="3" rows="3"></textarea>
         </label>
     </div>
     <div>
-        <label> Formatted
+        <label> Formatted lyrics
             <textarea id="formatted"  cols="3" rows="3">
                  </textarea>
         </label>
-        <div>
-            <button id="copyBtn">
-                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWNvcHktaWNvbiBsdWNpZGUtY29weSI+PHJlY3Qgd2lkdGg9IjE0IiBoZWlnaHQ9IjE0IiB4PSI4IiB5PSI4IiByeD0iMiIgcnk9IjIiLz48cGF0aCBkPSJNNCAxNmMtMS4xIDAtMi0uOS0yLTJWNGMwLTEuMS45LTIgMi0yaDEwYzEuMSAwIDIgLjkgMiAyIi8+PC9zdmc+" />
-                Copy formatted lyrics </button>
-            <div id="statusText"></div>
-        </div>
     </div>
 </main>
+
+<section id="actions">
+    <button id="copyBtn">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWNvcHktaWNvbiBsdWNpZGUtY29weSI+PHJlY3Qgd2lkdGg9IjE0IiBoZWlnaHQ9IjE0IiB4PSI4IiB5PSI4IiByeD0iMiIgcnk9IjIiLz48cGF0aCBkPSJNNCAxNmMtMS4xIDAtMi0uOS0yLTJWNGMwLTEuMS45LTIgMi0yaDEwYzEuMSAwIDIgLjkgMiAyIi8+PC9zdmc+" alt="copy icon"/>
+        Copy formatted lyrics </button>
+    <div id="statusText"></div>
+</section>
+
+<section id="works-guide">
+    <header>
+        <h1>How it works</h1>
+        <em>Simple guide of the tool 1 </em>
+    </header>
+    <article>
+        <h2>Step #1: Copy the Lyrics of your song</h2>
+        <p>
+            Find the lyrics to your song online and paste in the first input area
+        </p>
+        <br>
+        <h2>Step #2: Click the "copy formatted lyrics" button</h2>
+        <p>
+            The lyrics automatically get formatted in the OpenLP lyric style.
+            Copy and enjoy!
+        </p>
+    </article>
+</section>
 <script src="main.js" defer></script>
 </body>
 </html>
