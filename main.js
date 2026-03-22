@@ -41,7 +41,7 @@ async function copyText(e) {
     try {
         if (formattedTextArea.value !== "") {
             navigator.clipboard.writeText(formattedTextArea.value);
-            statusIndicator.innerHTML = "Text copied!";
+            statusIndicator.innerHTML = "lyrics copied!";
         }
     } catch (e) {
         console.log(e);
