@@ -7,17 +7,28 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<header>
     <h2>OPENLP Fast Lyric Formatter</h2>
-    <main>
+</header>
+<main>
+    <div>
         <label> Your text goes here
             <textarea id="raw" cols="3" rows="3"></textarea>
         </label>
+    </div>
+    <div>
         <label> Formatted
             <textarea id="formatted"  cols="3" rows="3">
-
-             </textarea>
+                 </textarea>
         </label>
-    </main>
+        <div>
+            <button id="copyBtn">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWNvcHktaWNvbiBsdWNpZGUtY29weSI+PHJlY3Qgd2lkdGg9IjE0IiBoZWlnaHQ9IjE0IiB4PSI4IiB5PSI4IiByeD0iMiIgcnk9IjIiLz48cGF0aCBkPSJNNCAxNmMtMS4xIDAtMi0uOS0yLTJWNGMwLTEuMS45LTIgMi0yaDEwYzEuMSAwIDIgLjkgMiAyIi8+PC9zdmc+" />
+                Copy formatted lyrics </button>
+            <div id="statusText"></div>
+        </div>
+    </div>
+</main>
 <script src="main.js" defer></script>
 </body>
 </html>

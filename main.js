@@ -1,5 +1,7 @@
 let rawTextArea = undefined;
 let formattedTextArea = undefined;
+let copyBtn = undefined;
+let statusIndicator = undefined;
 
 document.addEventListener("DOMContentLoaded", () => {
         getElements();
@@ -9,11 +11,14 @@ document.addEventListener("DOMContentLoaded", () => {
 function getElements() {
     rawTextArea = document.querySelector("#raw");
     formattedTextArea = document.querySelector("#formatted");
+    copyBtn = document.querySelector("#copyBtn");
+    statusIndicator = document.querySelector("#statusText");
     console.log(rawTextArea, formattedTextArea)
 }
 
 function registerEventHandlers() {
     rawTextArea.addEventListener("input", parseText);
+    copyBtn.addEventListener('click', copyText);
 }
 
 function parseText(source) {
@@ -28,5 +33,17 @@ function parseText(source) {
             splitByBreak[i] += '\n';
         }
     }
-    formattedTextArea.value = splitByBreak.join("");;
+    formattedTextArea.value = splitByBreak.join("");
+}
+
+
+async function copyText(e) {
+    try {
+        if (formattedTextArea.value !== "") {
+            navigator.clipboard.writeText(formattedTextArea.value);
+            statusIndicator.innerHTML = "Text copied!";
+        }
+    } catch (e) {
+        console.log(e);
+    }
 }

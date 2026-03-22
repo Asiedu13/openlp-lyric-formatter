@@ -70,6 +70,13 @@ select {
     font: inherit;
 }
 
+body {
+    overflow-x: hidden;
+}
+
+header {
+    padding: 1rem;
+}
 
 main {
     display: flex;
@@ -90,4 +97,19 @@ main label textarea {
     width: 300px;
     height: 200px;
     border-radius: 10px;
+}
+
+main div button {
+    width: fit-content;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+main div button img {
+    height: 20px;
+    width: 20px;
 }
